@@ -3,47 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Restaurant</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Restaurant Delight</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #333; color: white; text-align: center; padding: 1rem; }
+        nav ul { list-style-type: none; padding: 0; }
+        nav ul li { display: inline; margin-right: 15px; }
+        nav a { color: white; text-decoration: none; }
+        .hero {
+            position: relative;
+            background-image: url('restaurant.jpg');
+            background-size: cover;
+            height: 400px;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero h1 { font-size: 3rem; }
+        .content { padding: 2rem; }
+        .footer { background-color: #333; color: white; text-align: center; padding: 1rem; }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Our Restaurant</h1>
+        <h1>Welcome to Restaurant Delight</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section id="home">
-        <h2>Delicious Food, Cozy Ambiance</h2>
-        <p>Experience the best dining experience with us. Our gourmet chefs prepare dishes using the freshest ingredients.</p>
+    <section id="home" class="hero">
+        <h1>Exquisite Dining Experience</h1>
     </section>
-    <section id="menu">
+    <section id="menu" class="content">
         <h2>Our Menu</h2>
+        <p>Discover our delectable dishes crafted with the freshest ingredients. We offer a wide variety to satisfy every palate.</p>
         <ul>
-            <li>Pasta Primavera</li>
-            <li>Grilled Salmon</li>
-            <li>Classic Cheeseburger</li>
+            <li>Appetizers</li>
+            <li>Main Courses</li>
+            <li>Desserts</li>
+            <li>Beverages</li>
         </ul>
     </section>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Founded in 1999, Our Restaurant has been serving mouth-watering dishes to food lovers with a passion for culinary arts.</p>
-    </section>
-    <section id="contact">
+    <section id="contact" class="content">
         <h2>Contact Us</h2>
-        <address>
-            <p>Email: contact@ourrestaurant.com</p>
-            <p>Phone: (123) 456-7890</p>
-            <p>Address: 123 Food Street, Flavor Town</p>
-        </address>
+        <p>Address: 123 Culinary Street, Food City</p>
+        <p>Phone: (123) 456-7890</p>
     </section>
-    <footer>
-        <p>&copy; 2023 Our Restaurant</p>
+    <footer class="footer">
+        <p>© 2023 Restaurant Delight - All Rights Reserved</p>
     </footer>
 </body>
 </html>
