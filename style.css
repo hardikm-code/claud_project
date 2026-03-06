@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 60px 80px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #2d6a4f;
+    margin-bottom: 16px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.badge {
+    display: inline-block;
+    background: #2d6a4f;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+}
+
+.db-status {
+    margin-top: 24px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.db-status.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.db-status.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #aaa;
+}
