@@ -3,60 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Delight</title>
+    <title>Welcome to Our Restaurant</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background-color: #333; color: white; text-align: center; padding: 1rem; }
-        nav ul { list-style-type: none; padding: 0; }
-        nav ul li { display: inline; margin-right: 15px; }
-        nav a { color: white; text-decoration: none; }
-        .hero {
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            margin: 0 15px;
+            color: #343a40;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .banner {
             position: relative;
-            background-image: url('restaurant.jpg');
+            background-image: url('https://example.com/restaurant-banner.jpg');
             background-size: cover;
-            height: 400px;
+            background-position: center;
+            height: 500px;
+        }
+        .banner h1 {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .footer {
+            background-color: #343a40;
             color: white;
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 10px 0;
         }
-        .hero h1 { font-size: 3rem; }
-        .content { padding: 2rem; }
-        .footer { background-color: #333; color: white; text-align: center; padding: 1rem; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Restaurant Delight</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Our Restaurant</h1>
     </header>
-    <section id="home" class="hero">
-        <h1>Exquisite Dining Experience</h1>
-    </section>
-    <section id="menu" class="content">
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="banner">
+        <h1>Experience the Taste of Fine Dining</h1>
+    </div>
+    <div class="content">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id libero eget ligula fermentum aliquet nec ac mauris. Sed et lectus ac ante pretium varius.</p>
         <h2>Our Menu</h2>
-        <p>Discover our delectable dishes crafted with the freshest ingredients. We offer a wide variety to satisfy every palate.</p>
-        <ul>
-            <li>Appetizers</li>
-            <li>Main Courses</li>
-            <li>Desserts</li>
-            <li>Beverages</li>
-        </ul>
-    </section>
-    <section id="contact" class="content">
+        <p>Explore our delicious menu that offers a wide variety of dishes to choose from.</p>
         <h2>Contact Us</h2>
-        <p>Address: 123 Culinary Street, Food City</p>
-        <p>Phone: (123) 456-7890</p>
-    </section>
+        <p>Reach out to us at (555) 123-4567 or visit our location.</p>
+    </div>
     <footer class="footer">
-        <p>© 2023 Restaurant Delight - All Rights Reserved</p>
+        <p>© 2023 Our Restaurant. All rights reserved.</p>
     </footer>
 </body>
 </html>
