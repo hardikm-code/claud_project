@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Restaurant</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background-color: #333; padding: 10px 0; color: #fff; text-align: center; }
-        nav ul { list-style-type: none; padding: 0; }
-        nav ul li { display: inline; margin-right: 10px; }
-        nav ul li a { color: #fff; text-decoration: none; }
-        .hero { background-image: url('hero.jpg'); background-size: cover; height: 500px; }
-        .hero h1 { color: #fff; text-align: center; padding-top: 200px; }
-        .content { padding: 20px; }
-        .content h2 { text-align: center; }
-        .content p { max-width: 600px; margin: auto; }
-        footer { background-color: #333; color: #fff; text-align: center; padding: 10px 0; }
-    </style>
+    <title>Welcome to Our Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Welcome to Our Restaurant</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section class="hero">
-        <h1>Delicious Food Awaits</h1>
+    <section id="home">
+        <h2>Delicious Food, Cozy Ambiance</h2>
+        <p>Experience the best dining experience with us. Our gourmet chefs prepare dishes using the freshest ingredients.</p>
     </section>
-    <section class="content">
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <ul>
+            <li>Pasta Primavera</li>
+            <li>Grilled Salmon</li>
+            <li>Classic Cheeseburger</li>
+        </ul>
+    </section>
+    <section id="about">
         <h2>About Us</h2>
-        <p>Our restaurant offers the finest dishes made with the freshest ingredients. Come join us for an unforgettable dining experience.</p>
+        <p>Founded in 1999, Our Restaurant has been serving mouth-watering dishes to food lovers with a passion for culinary arts.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <address>
+            <p>Email: contact@ourrestaurant.com</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Address: 123 Food Street, Flavor Town</p>
+        </address>
     </section>
     <footer>
-        <p>&copy; 2023 Our Restaurant | <a href="mailto:info@ourrestaurant.com">info@ourrestaurant.com</a></p>
+        <p>&copy; 2023 Our Restaurant</p>
     </footer>
 </body>
 </html>
