@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Pong Game</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 0 auto;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="pongCanvas" width="800" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('pongCanvas');
+        const context = canvas.getContext('2d');
+
+        // Create ball object
+        const ball = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            radius: 10,
+            dx: 4,
+            dy: 4
+        };
+
+        // Create paddle objects
+        const paddleWidth = 10, paddleHeight = 100;
+        const userPaddle = {
+            x: 0,
+            y: (canvas.height - paddleHeight) / 2,
+            width: paddleWidth,
+            height: paddleHeight,
+            dy: 0
+        };
+
+        const aiPaddle = {
+            x: canvas.width - paddleWidth,
+            y: (canvas.height - paddleHeight) / 2,
+            width: paddleWidth,
+            height: paddleHeight,
+            dy: 2
+        };
+
+        // Draw ball on canvas
+        function drawBall() {
+            context.beginPath();
+            context.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+            context.fillStyle = "red";
+            context.fill();
+            context.closePath();
+        }
+
+        // Draw paddles
+        function drawPaddle(x, y, width, height) {
+            context.fillStyle = "blue";
+            context.fillRect(x, y, width, height);
+        }
+
+        // Move user paddle
+        function moveUserPaddle() {
+            userPaddle.y += userPaddle.dy;
+            if (userPaddle.y < 0) userPaddle.y = 0;
+            if (userPaddle.y + userPaddle.height > canvas.height) userPaddle.y = canvas.height - userPaddle.height;
+        }
+
+        // Move AI paddle
+        function moveAiPaddle() {
+            if (aiPaddle.y + aiPaddle.height / 2 < ball.y) aiPaddle.y += aiPaddle.dy;
+            else aiPaddle.y -= aiPaddle.dy;
+
+            if (aiPaddle.y < 0) aiPaddle.y = 0;
+            if (aiPaddle.y + aiPaddle.height > canvas.height) aiPaddle.y = canvas.height - aiPaddle.height;
+        }
+
+        // Move ball
+        function moveBall() {
+            ball.x += ball.dx;
+            ball.y += ball.dy;
+
+            // Wall collision (top/bottom)
+            if (ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) ball.dy *= -1;
+
+            // Paddle collision
+            if (
+                ball.y > userPaddle.y &&
+                ball.y < userPaddle.y + userPaddle.height &&
+                ball.x - ball.radius < userPaddle.x + userPaddle.width
+            ) {
+                ball.dx *= -1;
+            }
+
+            if (
+                ball.y > aiPaddle.y &&
+                ball.y < aiPaddle.y + aiPaddle.height &&
+                ball.x + ball.radius > aiPaddle.x
+            ) {
+                ball.dx *= -1;
+            }
+
+            // Reset ball if it goes out of bounds
+            if (ball.x + ball.radius < 0 || ball.x - ball.radius > canvas.width) {
+                ball.x = canvas.width / 2;
+                ball.y = canvas.height / 2;
+            }
+        }
+
+        // Update game objects
+        function update() {
+            moveUserPaddle();
+            moveAiPaddle();
+            moveBall();
+        }
+
+        // Render the game objects
+        function render() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            drawBall();
+            drawPaddle(userPaddle.x, userPaddle.y, userPaddle.width, userPaddle.height);
+            drawPaddle(aiPaddle.x, aiPaddle.y, aiPaddle.width, aiPaddle.height);
+        }
+
+        // Game loop
+        function gameLoop() {
+            update();
+            render();
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Start game loop
+        gameLoop();
+
+        // Keyboard event listeners
+        window.addEventListener('keydown', function(e) {
+            switch (e.key) {
+                case 'ArrowUp':
+                    userPaddle.dy = -4;
+                    break;
+                case 'ArrowDown':
+                    userPaddle.dy = 4;
+                    break;
+            }
+        });
+
+        window.addEventListener('keyup', function(e) {
+            if (e.key === 'ArrowUp' || e.key === 'ArrowDown') userPaddle.dy = 0;
+        });
+    </script>
+</body>
+</html>
