@@ -31,8 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reservation_submit'])
 
     if (empty($errors)) {
         $stmt = $conn->prepare("INSERT INTO reservations (name, email, phone, date, time, guests, special_requests) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssssi", $name, $email, $phone, $date, $time, $guests, $special);
-        // Fix: bind_param expects int for 'i', not string
         $stmt->bind_param("sssssis", $name, $email, $phone, $date, $time, $guests, $special);
         if ($stmt->execute()) {
             $msg = '<div class="alert alert-success">
